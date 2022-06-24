@@ -15,7 +15,7 @@ function change(id){
 function onDelete(id){
     const item = list.findIndex(d => d.id === id)
     list.splice(item, 1)
-    render(list)
+    render(list[item])
 }
 
 function render() {
@@ -43,7 +43,7 @@ function render() {
         deleteButton.setAttribute('class','delete')
         deleteButton.innerText = 'Delete'
         deleteButton.addEventListener('click', () =>
-            onDelete()
+            onDelete(list[i].id)
         )
 
         buttons.append(changeButton,deleteButton)
