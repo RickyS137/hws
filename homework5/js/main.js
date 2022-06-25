@@ -61,7 +61,11 @@ addButton.addEventListener('click', function (){
         id: list.length+1,
         text: input.value
     }
-    list.push(obj)
-    console.log(list)
-    render()
+    if (input.value === ''){
+        return false
+    }else {
+        list.push(obj)
+        console.log(list)
+        render()
+    }
 })
